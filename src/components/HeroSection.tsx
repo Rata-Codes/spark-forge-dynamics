@@ -86,8 +86,8 @@ const HeroSection: React.FC = () => {
       {/* Code-like decoration */}
       <div className="hidden lg:block absolute top-1/4 left-10 text-xs opacity-20 font-mono animate-fade-in">
         &lt;div class="innovation"&gt;<br/>
-        &nbsp;&nbsp;import { AI } from 'sparks';<br/>
-        &nbsp;&nbsp;const future = await AI.create();<br/>
+        &nbsp;&nbsp;import {'{ AI }'} from 'sparks';<br/>
+        &nbsp;&nbsp;const future = await {'AI.create()'};<br/>
         &lt;/div&gt;
       </div>
       
