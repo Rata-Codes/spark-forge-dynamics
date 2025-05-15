@@ -1,6 +1,7 @@
 
 import React from "react";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import TechParticles from "@/components/TechParticles";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -14,6 +15,9 @@ const Index = () => {
     <div className="relative min-h-screen">
       {/* Particles background animation */}
       <ParticlesBackground />
+      
+      {/* Tech-themed particles */}
+      <TechParticles />
       
       {/* Navbar */}
       <Navbar />
