@@ -6,7 +6,6 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import WorkProcess from "@/components/WorkProcess";
 import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -30,9 +29,6 @@ const Index = () => {
       
       {/* Work Process Section */}
       <WorkProcess />
-      
-      {/* Contact Section */}
-      <ContactSection />
       
       {/* Footer Section */}
       <FooterSection />

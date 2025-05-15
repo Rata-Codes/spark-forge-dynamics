@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Database, Cpu, Laptop, ServerIcon, Smartphone } from 'lucide-react';
+import { ArrowRight, Code, Cpu, Laptop, Smartphone } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   return (
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
 
         {/* Tech icons with animations */}
         <div className="hidden md:flex justify-center mt-20 animate-fade-in [animation-delay:0.8s] opacity-0">
-          <div className="grid grid-cols-6 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             <div className="flex flex-col items-center animate-float group perspective-500">
               <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-purple/20">
                 <Code className="h-8 w-8 text-spark-purple transform transition-all duration-300 group-hover:scale-110" />
@@ -66,18 +66,6 @@ const HeroSection: React.FC = () => {
             </div>
             <div className="flex flex-col items-center animate-float [animation-delay:0.9s] group perspective-500">
               <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-blue/20">
-                <Database className="h-8 w-8 text-spark-blue transform transition-all duration-300 group-hover:scale-110" />
-              </div>
-              <span className="mt-2 text-sm font-medium">Cloud</span>
-            </div>
-            <div className="flex flex-col items-center animate-float [animation-delay:1.2s] group perspective-500">
-              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-purple/20">
-                <ServerIcon className="h-8 w-8 text-spark-purple transform transition-all duration-300 group-hover:scale-110" />
-              </div>
-              <span className="mt-2 text-sm font-medium">DevOps</span>
-            </div>
-            <div className="flex flex-col items-center animate-float [animation-delay:1.5s] group perspective-500">
-              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-blue/20">
                 <Laptop className="h-8 w-8 text-spark-blue transform transition-all duration-300 group-hover:scale-110" />
               </div>
               <span className="mt-2 text-sm font-medium">UI/UX</span>
@@ -89,55 +77,93 @@ const HeroSection: React.FC = () => {
       {/* Background elements */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl bg-gradient-to-br from-spark-purple/20 to-spark-blue/20 animate-pulse-slow"></div>
       
-      {/* Floating orbs */}
-      <div className="absolute top-20 right-16 w-20 h-20 rounded-full bg-gradient-to-br from-spark-blue/30 to-spark-purple/10 blur-xl animate-float"></div>
-      <div className="absolute bottom-20 left-16 w-16 h-16 rounded-full bg-gradient-to-tr from-spark-purple/30 to-spark-blue/10 blur-xl animate-float-horizontal"></div>
-      
-      {/* Animated particles */}
-      <div className="absolute top-40 left-1/4 w-4 h-4 rounded-full bg-spark-purple/80 shadow-lg shadow-spark-purple/30 animate-ping"></div>
-      <div className="absolute bottom-40 right-1/4 w-4 h-4 rounded-full bg-spark-blue/80 shadow-lg shadow-spark-blue/30 animate-ping [animation-delay:1s]"></div>
-      
-      {/* Animated lines/circuits */}
-      <svg className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-        <path 
-          d="M0,100 Q50,50 100,100 T200,100 T300,100 T400,100" 
-          fill="none" 
-          stroke="url(#circuit1)" 
-          strokeWidth="2"
-          className="animate-draw-line"
-        >
-        </path>
-        <path 
-          d="M100,0 Q150,50 100,100 T100,200 T100,300 T100,400" 
-          fill="none" 
-          stroke="url(#circuit2)" 
-          strokeWidth="2"
-          className="animate-draw-line [animation-delay:1s]"
-        >
-        </path>
-        <defs>
-          <linearGradient id="circuit1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#9b87f5" />
-            <stop offset="100%" stopColor="#1EAEDB" />
-          </linearGradient>
-          <linearGradient id="circuit2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#1EAEDB" />
-            <stop offset="100%" stopColor="#9b87f5" />
-          </linearGradient>
-        </defs>
-      </svg>
+      {/* Circuit animation background */}
+      <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
+        <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <path 
+            d="M0,100 Q50,50 100,100 T200,100 T300,100 T400,100" 
+            fill="none" 
+            stroke="url(#circuit1)" 
+            strokeWidth="1.5"
+            className="circuit-line"
+          />
+          <path 
+            d="M100,0 Q150,50 100,100 T100,200 T100,300 T100,400" 
+            fill="none" 
+            stroke="url(#circuit2)" 
+            strokeWidth="1.5"
+            className="circuit-line"
+          />
+          <path 
+            d="M300,0 Q250,50 300,100 T300,200 T300,300 T300,400" 
+            fill="none" 
+            stroke="url(#circuit3)" 
+            strokeWidth="1.5"
+            className="circuit-line"
+            style={{ animationDelay: '0.5s' }}
+          />
+          <path 
+            d="M0,300 Q50,250 100,300 T200,300 T300,300 T400,300"
+            fill="none" 
+            stroke="url(#circuit4)" 
+            strokeWidth="1.5"
+            className="circuit-line"
+            style={{ animationDelay: '0.7s' }}
+          />
+          <path 
+            d="M400,0 L400,400 M350,0 L350,400 M250,0 L250,400 M150,0 L150,400"
+            fill="none" 
+            stroke="url(#circuit5)" 
+            strokeWidth="0.5"
+            strokeDasharray="5,10"
+            className="circuit-line"
+            style={{ animationDelay: '1s' }}
+          />
+          <defs>
+            <linearGradient id="circuit1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#9b87f5" />
+              <stop offset="100%" stopColor="#1EAEDB" />
+            </linearGradient>
+            <linearGradient id="circuit2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#1EAEDB" />
+              <stop offset="100%" stopColor="#9b87f5" />
+            </linearGradient>
+            <linearGradient id="circuit3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#9b87f5" />
+              <stop offset="100%" stopColor="#1EAEDB" />
+            </linearGradient>
+            <linearGradient id="circuit4" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1EAEDB" />
+              <stop offset="100%" stopColor="#9b87f5" />
+            </linearGradient>
+            <linearGradient id="circuit5" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#9b87f5" />
+              <stop offset="50%" stopColor="#1EAEDB" />
+              <stop offset="100%" stopColor="#9b87f5" />
+            </linearGradient>
+          </defs>
+        </svg>
+        
+        {/* Circuit nodes */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-spark-purple/80 shadow-lg shadow-spark-purple/30 circuit-node"></div>
+        <div className="absolute top-3/4 right-1/4 w-2 h-2 rounded-full bg-spark-blue/80 shadow-lg shadow-spark-blue/30 circuit-node" style={{ animationDelay: '0.3s' }}></div>
+        <div className="absolute top-2/4 left-3/4 w-2 h-2 rounded-full bg-spark-purple/80 shadow-lg shadow-spark-purple/30 circuit-node" style={{ animationDelay: '0.6s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-spark-blue/80 shadow-lg shadow-spark-blue/30 circuit-node" style={{ animationDelay: '0.9s' }}></div>
+      </div>
       
       {/* Code-like decoration */}
       <div className="hidden lg:block absolute top-1/4 left-10 text-xs opacity-20 font-mono animate-fade-in">
-        &lt;div class="innovation"&gt;<br/>
-        &nbsp;&nbsp;import {'{ AI }'} from 'sparks';<br/>
-        &nbsp;&nbsp;const future = await {'AI.create()'};<br/>
+        &lt;div class=&quot;innovation&quot;&gt;<br/>
+        &nbsp;&nbsp;import {'{AI}'} from &apos;sparks&apos;;<br/>
+        &nbsp;&nbsp;const future = await {'{AI.create()}'};<br/>
         &lt;/div&gt;
       </div>
       
       <div className="hidden lg:block absolute bottom-1/4 right-10 text-xs opacity-20 font-mono animate-fade-in">
-        function solveProblems() {'{'}<br/>
-        &nbsp;&nbsp;return innovative.solutions;<br/>
+        function solveProblems() {'{'}
+        <br/>
+        &nbsp;&nbsp;return innovative.solutions;
+        <br/>
         {'}'}
       </div>
     </section>

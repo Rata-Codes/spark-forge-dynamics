@@ -134,3 +134,84 @@
   overflow: hidden;
   z-index: -1;
 }
+
+/* New animations and effects */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes circuit-animation {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.perspective-500 {
+  perspective: 500px;
+}
+
+.animate-gradient {
+  animation: gradient-shift 3s linear infinite;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.circuit-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: circuit-animation 15s linear infinite;
+}
+
+.circuit-node {
+  animation: node-pulse 3s ease-in-out infinite;
+}

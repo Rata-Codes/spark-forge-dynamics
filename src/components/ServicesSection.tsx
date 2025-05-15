@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Laptop, Smartphone, Brain, Database, Globe, BarChart } from 'lucide-react';
+import { Laptop, Smartphone, Brain, BarChart } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -38,16 +38,6 @@ const ServicesSection: React.FC = () => {
       description: 'Advanced AI solutions that analyze data, recognize patterns, and make intelligent decisions for your business.'
     },
     {
-      icon: <Database className="h-7 w-7 text-spark-purple" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and services that optimize performance and reduce operational costs.'
-    },
-    {
-      icon: <Globe className="h-7 w-7 text-spark-purple" />,
-      title: 'Digital Transformation',
-      description: 'Comprehensive strategies to modernize legacy systems and embrace digital technologies.'
-    },
-    {
       icon: <BarChart className="h-7 w-7 text-spark-purple" />,
       title: 'Data Analytics',
       description: 'Powerful data visualization and analytics tools that help you make informed business decisions.'
@@ -64,7 +54,7 @@ const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
