@@ -92,9 +92,9 @@ const HeroSection: React.FC = () => {
       </div>
       
       <div className="hidden lg:block absolute bottom-1/4 right-10 text-xs opacity-20 font-mono animate-fade-in">
-        function solveProblems() {<br/>
+        function solveProblems() {'{'}<br/>
         &nbsp;&nbsp;return innovative.solutions;<br/>
-        }
+        {'}'}
       </div>
     </section>
   );
