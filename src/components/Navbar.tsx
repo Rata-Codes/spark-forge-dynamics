@@ -32,8 +32,9 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex justify-between items-center">
-        <a href="/" className="z-10">
+        <a href="/" className="z-10 flex items-center">
           <img src="/assets/sparks-logo.svg" alt="SparksAI Logo" className="h-10" />
+          <span className="ml-2 font-bold text-xl text-gradient">SPARKS AI</span>
         </a>
 
         <nav className="hidden md:flex items-center space-x-8">

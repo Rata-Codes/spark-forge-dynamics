@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Code, Database, Cpu, Laptop, ServerIcon, Smartphone } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   return (
@@ -30,12 +30,72 @@ const HeroSection: React.FC = () => {
             </Button>
           </div>
         </div>
+
+        {/* Tech icons with animations */}
+        <div className="hidden md:flex justify-center mt-20 animate-fade-in [animation-delay:0.8s] opacity-0">
+          <div className="grid grid-cols-6 gap-6">
+            <div className="flex flex-col items-center animate-float">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <Code className="h-8 w-8 text-spark-purple" />
+              </div>
+              <span className="mt-2 text-sm font-medium">Web Dev</span>
+            </div>
+            <div className="flex flex-col items-center animate-float [animation-delay:0.3s]">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <Smartphone className="h-8 w-8 text-spark-blue" />
+              </div>
+              <span className="mt-2 text-sm font-medium">Mobile Apps</span>
+            </div>
+            <div className="flex flex-col items-center animate-float [animation-delay:0.6s]">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <Cpu className="h-8 w-8 text-spark-purple" />
+              </div>
+              <span className="mt-2 text-sm font-medium">AI Solutions</span>
+            </div>
+            <div className="flex flex-col items-center animate-float [animation-delay:0.9s]">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <Database className="h-8 w-8 text-spark-blue" />
+              </div>
+              <span className="mt-2 text-sm font-medium">Cloud</span>
+            </div>
+            <div className="flex flex-col items-center animate-float [animation-delay:1.2s]">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <ServerIcon className="h-8 w-8 text-spark-purple" />
+              </div>
+              <span className="mt-2 text-sm font-medium">DevOps</span>
+            </div>
+            <div className="flex flex-col items-center animate-float [animation-delay:1.5s]">
+              <div className="p-4 bg-card/50 rounded-full shadow-lg">
+                <Laptop className="h-8 w-8 text-spark-blue" />
+              </div>
+              <span className="mt-2 text-sm font-medium">UI/UX</span>
+            </div>
+          </div>
+        </div>
       </div>
       
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl bg-spark-purple/20 animate-pulse-slow"></div>
       
       <div className="absolute top-20 right-16 w-20 h-20 rounded-full bg-spark-blue/30 blur-xl animate-float"></div>
       <div className="absolute bottom-20 left-16 w-16 h-16 rounded-full bg-spark-purple/30 blur-xl animate-float-horizontal"></div>
+      
+      {/* Additional animated elements */}
+      <div className="absolute top-40 left-1/4 w-4 h-4 rounded-full bg-spark-purple animate-ping"></div>
+      <div className="absolute bottom-40 right-1/4 w-4 h-4 rounded-full bg-spark-blue animate-ping [animation-delay:1s]"></div>
+      
+      {/* Code-like decoration */}
+      <div className="hidden lg:block absolute top-1/4 left-10 text-xs opacity-20 font-mono animate-fade-in">
+        &lt;div class="innovation"&gt;<br/>
+        &nbsp;&nbsp;import { AI } from 'sparks';<br/>
+        &nbsp;&nbsp;const future = await AI.create();<br/>
+        &lt;/div&gt;
+      </div>
+      
+      <div className="hidden lg:block absolute bottom-1/4 right-10 text-xs opacity-20 font-mono animate-fade-in">
+        function solveProblems() {<br/>
+        &nbsp;&nbsp;return innovative.solutions;<br/>
+        }
+      </div>
     </section>
   );
 };
