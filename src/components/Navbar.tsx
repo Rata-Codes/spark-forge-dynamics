@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,9 +32,21 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex justify-between items-center">
-        <a href="/" className="z-10 flex items-center">
-          <img src="/assets/sparks-logo.svg" alt="SparksAI Logo" className="h-10" />
-          <span className="ml-2 font-bold text-xl text-gradient">SPARKS AI</span>
+        <a href="/" className="z-10 flex items-center group">
+          <div className="relative overflow-hidden">
+            <img 
+              src="/assets/sparks-logo.svg" 
+              alt="SparksAI Logo" 
+              className="h-10 transform transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-spark-purple/0 to-spark-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
+          </div>
+          <div className="ml-2 relative">
+            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-spark-purple to-spark-blue">SPARKS AI</span>
+            <div className="absolute -top-1 -right-3">
+              <Sparkles className="h-3 w-3 text-spark-purple animate-ping" />
+            </div>
+          </div>
         </a>
 
         <nav className="hidden md:flex items-center space-x-8">

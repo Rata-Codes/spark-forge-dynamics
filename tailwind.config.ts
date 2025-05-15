@@ -127,6 +127,19 @@ export default {
 					'0%, 100%': { transform: 'translateX(0px)' },
 					'50%': { transform: 'translateX(-10px)' },
 				},
+				'draw-line': {
+					'0%': {
+						strokeDasharray: '1000',
+						strokeDashoffset: '1000'
+					},
+					'100%': {
+						strokeDashoffset: '0'
+					}
+				},
+				'rotate-y': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(360deg)' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -138,11 +151,24 @@ export default {
 				'gradient-flow': 'gradient-flow 15s ease infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
 				'float-horizontal': 'float-horizontal 5s ease-in-out infinite',
+				'draw-line': 'draw-line 3s ease-in-out forwards',
+				'rotate-y': 'rotate-y 3s ease-in-out',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'hero-pattern': 'linear-gradient(to right, rgba(26, 31, 44, 0.8) 0%, rgba(26, 31, 44, 0.6) 100%), url("/assets/grid-pattern.svg")',
 				'gradient-primary': 'linear-gradient(90deg, #9b87f5 0%, #D6BCFA 100%)',
+			},
+			transitionProperty: {
+				'width': 'width',
+				'rotate-y': 'transform', 
+			},
+			perspective: {
+				'500': '500px',
+				'1000': '1000px',
+			},
+			rotate: {
+				'y-12': 'rotateY(12deg)',
 			}
 		}
 	},
