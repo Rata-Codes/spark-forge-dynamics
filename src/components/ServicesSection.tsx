@@ -1,12 +1,12 @@
 
 import React from 'react';
 import { Laptop, Smartphone, Brain, BarChart } from 'lucide-react';
-import InteractiveServiceCard from './InteractiveServiceCard';
+import ProfessionalServiceCard from './ProfessionalServiceCard';
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      icon: <Laptop className="h-7 w-7 text-spark-purple" />,
+      icon: <Laptop className="h-7 w-7 text-blue-400" />,
       title: 'Web Development',
       description: 'Custom websites and web applications built with modern technologies for optimal performance and user experience.',
       features: [
@@ -15,10 +15,10 @@ const ServicesSection: React.FC = () => {
         'React & Next.js development',
         'API integration'
       ],
-      iconBg: "from-spark-purple/20 to-spark-ember/20"
+      iconBg: "from-blue-500/20 to-blue-600/10"
     },
     {
-      icon: <Smartphone className="h-7 w-7 text-spark-ember" />,
+      icon: <Smartphone className="h-7 w-7 text-blue-400" />,
       title: 'Mobile Applications',
       description: 'Native and cross-platform mobile apps that provide seamless experiences across iOS and Android devices.',
       features: [
@@ -27,10 +27,10 @@ const ServicesSection: React.FC = () => {
         'Mobile UI/UX design',
         'App store submission'
       ],
-      iconBg: "from-spark-ember/20 to-spark-purple/20"
+      iconBg: "from-blue-500/20 to-blue-600/10"
     },
     {
-      icon: <Brain className="h-7 w-7 text-spark-purple" />,
+      icon: <Brain className="h-7 w-7 text-blue-400" />,
       title: 'AI & Machine Learning',
       description: 'Advanced AI solutions that analyze data, recognize patterns, and make intelligent decisions for your business.',
       features: [
@@ -39,10 +39,10 @@ const ServicesSection: React.FC = () => {
         'Predictive analytics',
         'Custom AI models'
       ],
-      iconBg: "from-spark-purple/20 to-spark-ember/20"
+      iconBg: "from-blue-500/20 to-blue-600/10"
     },
     {
-      icon: <BarChart className="h-7 w-7 text-spark-ember" />,
+      icon: <BarChart className="h-7 w-7 text-blue-400" />,
       title: 'Data Analytics',
       description: 'Powerful data visualization and analytics tools that help you make informed business decisions.',
       features: [
@@ -51,37 +51,28 @@ const ServicesSection: React.FC = () => {
         'Data visualization',
         'Performance reporting'
       ],
-      iconBg: "from-spark-ember/20 to-spark-purple/20"
+      iconBg: "from-blue-500/20 to-blue-600/10"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-secondary/10 relative overflow-hidden">
-      {/* Tech-themed background elements */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800">
-          <rect x="100" y="100" width="300" height="300" fill="none" stroke="currentColor" strokeWidth="1" />
-          <circle cx="720" cy="400" r="200" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M100,700 Q400,500 700,700 T1300,700" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M100,200 L1300,200" strokeDasharray="10,10" stroke="currentColor" strokeWidth="1" fill="none" />
-          <path d="M150,100 L150,700" strokeDasharray="10,10" stroke="currentColor" strokeWidth="1" fill="none" />
-          <path d="M1250,100 L1250,700" strokeDasharray="10,10" stroke="currentColor" strokeWidth="1" fill="none" />
-          <circle cx="250" cy="250" r="30" fill="none" stroke="currentColor" strokeWidth="1" />
-          <circle cx="1150" cy="550" r="30" fill="none" stroke="currentColor" strokeWidth="1" />
-        </svg>
+    <section id="services" className="py-20 relative overflow-hidden bg-[#040714]/95">
+      {/* Professional grid background animation */}
+      <div className="absolute inset-0 z-0">
+        <div className="grid-animation"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-gradient">Services</span></h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Expertise <span className="text-gradient-professional">Services</span></h2>
+          <p className="text-xl text-blue-100/80 max-w-2xl mx-auto">
             We deliver comprehensive technology solutions tailored to your unique business challenges.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <InteractiveServiceCard
+            <ProfessionalServiceCard
               key={index}
               icon={service.icon}
               title={service.title}
@@ -94,10 +85,9 @@ const ServicesSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Floating tech elements */}
-      <div className="absolute -bottom-16 -left-16 w-32 h-32 border border-spark-purple/10 rounded-full"></div>
-      <div className="absolute top-10 right-10 w-20 h-20 border border-spark-ember/10 rounded-full"></div>
-      <div className="absolute top-1/3 left-10 w-16 h-16 border border-spark-purple/10 rounded-full"></div>
+      {/* Professional accent elements */}
+      <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl"></div>
     </section>
   );
 };

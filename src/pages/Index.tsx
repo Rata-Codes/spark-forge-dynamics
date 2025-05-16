@@ -1,6 +1,5 @@
 
 import React, { useEffect } from "react";
-import ParticlesBackground from "@/components/ParticlesBackground";
 import TechParticles from "@/components/TechParticles";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -17,10 +16,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-spark-coal text-foreground">
-      {/* Particles background animation */}
-      <ParticlesBackground />
-      
+    <div className="relative min-h-screen bg-[#040714] text-foreground">
       {/* Tech-themed particles */}
       <TechParticles />
       
