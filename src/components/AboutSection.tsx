@@ -78,10 +78,9 @@ const AboutSection: React.FC = () => {
           </div>
 
             
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-spark-purple/20 rounded-full blur-xl"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-spark-blue/20 rounded-full blur-xl"></div>
-          </div>
+          {/* Decorative elements */}
+          <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-spark-purple/20 rounded-full blur-xl"></div>
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-spark-blue/20 rounded-full blur-xl"></div>
         </div>
       </div>
     </section>
