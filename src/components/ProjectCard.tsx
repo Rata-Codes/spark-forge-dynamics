@@ -22,8 +22,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div 
       className={cn(
         "relative rounded-lg overflow-hidden group h-[380px] animate-fade-in opacity-0",
-        "bg-[#1A1812]/60 backdrop-blur-sm border border-amber-500/10",
-        "hover:shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/30",
+        "bg-[#1A1812]/70 backdrop-blur-md border border-amber-500/20",
+        "hover:shadow-lg hover:shadow-amber-500/20 hover:border-amber-500/40",
         "transition-all duration-500 ease-out"
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -64,8 +64,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className={cn(
             "inline-flex items-center text-amber-500 text-sm font-medium",
             "border border-amber-500/30 rounded-full px-4 py-2",
-            "transition-all duration-300 group-hover:bg-amber-500/10",
-            "hover:bg-amber-500/20"
+            "transition-all duration-300 group-hover:bg-amber-500/20",
+            "hover:bg-amber-500/30"
           )}
         >
           View Project <ExternalLink className="ml-2 h-4 w-4" />
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Tech circuit background */}
       <div className={cn(
         "absolute inset-0 z-0 opacity-0 transition-opacity duration-500",
-        isHovered ? "opacity-5" : ""
+        isHovered ? "opacity-10" : ""
       )}>
         <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <g stroke="currentColor" strokeWidth="0.5" fill="none">
@@ -93,8 +93,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       
       {/* Bottom accent line */}
       <div className={cn(
-        "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0",
-        isHovered ? "opacity-100" : "opacity-30"
+        "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/30 via-amber-500/60 to-amber-500/30",
+        isHovered ? "opacity-100" : "opacity-50"
+      )}></div>
+
+      {/* Edge glow effect */}
+      <div className={cn(
+        "absolute inset-0 rounded-lg transition-all duration-500",
+        isHovered ? "shadow-[0_0_15px_rgba(245,158,11,0.15)_inset]" : ""
       )}></div>
     </div>
   );

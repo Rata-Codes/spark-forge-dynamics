@@ -1,55 +1,43 @@
 
 import React from 'react';
-import { Cpu, Code, Smartphone, Database } from 'lucide-react';
+import { Code, Smartphone, Database } from 'lucide-react';
 import ProfessionalServiceCard from './ProfessionalServiceCard';
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
       icon: <Code className="h-7 w-7 text-amber-400" />,
-      title: 'Custom Software Development',
-      description: 'Build high-performance, user-friendly software that scales with your business needs.',
+      title: 'Web Development',
+      description: 'Custom websites & web applications that drive business growth.',
       features: [
-        'Enterprise solutions',
-        'Web applications',
-        'Cross-platform software',
-        'Legacy system modernization'
+        'React',
+        'Angular',
+        'Node.js',
+        'Our expert web developers create responsive, user-friendly websites and web applications using the latest technologies. From simple landing pages to complex enterprise solutions, we deliver high-quality web experiences that engage users and drive business growth.'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     },
     {
       icon: <Smartphone className="h-7 w-7 text-amber-400" />,
-      title: 'Mobile App Development',
-      description: 'Create engaging mobile experiences for iOS and Android with cutting-edge technology.',
+      title: 'Mobile Development',
+      description: 'Cross-platform mobile apps with seamless user experience.',
       features: [
-        'Native app development',
-        'Cross-platform solutions',
-        'UI/UX design',
-        'App maintenance & support'
-      ],
-      iconBg: "from-amber-500/20 to-amber-600/10"
-    },
-    {
-      icon: <Cpu className="h-7 w-7 text-amber-400" />,
-      title: 'AI & Machine Learning',
-      description: 'Harness the power of artificial intelligence to optimize operations and drive innovation.',
-      features: [
-        'Predictive analytics',
-        'Computer vision',
-        'Natural language processing',
-        'Recommendation systems'
+        'Flutter',
+        'React Native',
+        'Swift',
+        'We build custom mobile applications for iOS and Android that provide seamless experiences across devices. Our mobile development team focuses on intuitive interfaces, optimal performance, and innovative features to help your business reach customers on their preferred devices.'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     },
     {
       icon: <Database className="h-7 w-7 text-amber-400" />,
-      title: 'Data Analytics & BI',
-      description: 'Transform raw data into actionable insights with advanced analytics and visualization.',
+      title: 'Machine Learning',
+      description: 'AI solutions that transform data into business insights.',
       features: [
-        'Big data processing',
-        'Data warehousing',
-        'Business intelligence',
-        'Interactive dashboards'
+        'TensorFlow',
+        'PyTorch',
+        'NLP',
+        'Harness the power of artificial intelligence and machine learning to gain insights from your data. Our data scientists develop custom ML models that automate processes, predict trends, and enhance decision-making. We specialize in computer vision, natural language processing, and predictive analytics.'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     }
@@ -70,7 +58,7 @@ const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ProfessionalServiceCard
               key={index}

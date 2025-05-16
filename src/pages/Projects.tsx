@@ -32,23 +32,33 @@ const Projects = () => {
         const response = await fetch('https://api.airtable.com/v0/appkKccLAGrYOPAcu/tblQhXsg2wYMa1KPn', {
           headers: {
             'Authorization': 'Bearer patIqckQGSpoHpRcG.dbe2df3b9eaed7c98ce21b6156f4ed95cbedf5946cd67ea3cced0ce516344ecf',
-          }
+            'Content-Type': 'application/json'
+          },
+          method: 'GET'
         });
         
         if (!response.ok) {
+          console.error("Response status:", response.status);
+          console.error("Response text:", await response.text());
           throw new Error('Failed to fetch projects');
         }
 
         const data = await response.json();
-        const fetchedProjects = data.records.map((record: any) => ({
-          id: record.id,
-          ProjectName: record.fields.ProjectName,
-          ProjectLink: record.fields.ProjectLink,
-          Description: record.fields.Description,
-          Image: record.fields.Image
-        }));
+        console.log("Airtable response data:", data);
         
-        setProjects(fetchedProjects);
+        if (data && data.records) {
+          const fetchedProjects = data.records.map((record: any) => ({
+            id: record.id,
+            ProjectName: record.fields.ProjectName || "",
+            ProjectLink: record.fields.ProjectLink || "",
+            Description: record.fields.Description || "",
+            Image: record.fields.Image || ""
+          }));
+          
+          setProjects(fetchedProjects);
+        } else {
+          throw new Error('Invalid data format received');
+        }
       } catch (err) {
         console.error("Error fetching projects:", err);
         setError('Failed to load projects. Please try again later.');

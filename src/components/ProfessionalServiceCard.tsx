@@ -26,10 +26,10 @@ const ProfessionalServiceCard: React.FC<ProfessionalServiceCardProps> = ({
       className={cn(
         "relative rounded-lg transition-all duration-500 ease-out overflow-hidden group",
         "bg-[#1A1812]/70 backdrop-blur-sm border border-amber-500/10",
-        "hover:shadow-lg hover:shadow-amber-500/5 hover:border-amber-500/20",
-        "animate-fade-in opacity-0 h-[280px]"
+        "hover:shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/30",
+        "animate-fade-in opacity-0"
       )}
-      style={{ animationDelay: `${0.15 + index * 0.1}s` }}
+      style={{ animationDelay: `${0.15 + index * 0.1}s`, height: "auto", minHeight: "360px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -37,7 +37,8 @@ const ProfessionalServiceCard: React.FC<ProfessionalServiceCardProps> = ({
         <div className="flex items-start">
           <div className={cn(
             "p-3 bg-gradient-to-br rounded-lg w-12 h-12 mb-4 flex items-center justify-center",
-            iconBg
+            iconBg,
+            "shadow-inner shadow-amber-600/30"
           )}>
             {icon}
           </div>
@@ -46,20 +47,30 @@ const ProfessionalServiceCard: React.FC<ProfessionalServiceCardProps> = ({
         <h3 className="text-xl font-bold mb-2 text-amber-50">{title}</h3>
         <p className="text-amber-100/70 text-sm mb-4">{description}</p>
         
-        <div className={cn(
-          "mt-auto transition-all duration-300 transform",
-          isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        )}>
+        <div className="mt-6">
           <div className="h-px w-full bg-gradient-to-r from-amber-500/0 via-amber-500/30 to-amber-500/0 my-3"></div>
-          <h4 className="font-medium text-xs text-amber-400 mb-2">CAPABILITIES</h4>
-          <ul className="text-xs text-amber-100/70 grid grid-cols-2 gap-x-2 gap-y-1">
-            {features.map((feature, idx) => (
-              <li key={idx} className="flex items-center">
-                <span className="mr-1 text-amber-400 text-[8px]">■</span>
+          
+          <h4 className="font-medium text-xs text-amber-400 mb-2">KEY TECHNOLOGIES</h4>
+          
+          <div className="flex flex-wrap gap-2 mb-4">
+            {features.slice(0, 3).map((feature, idx) => (
+              <span 
+                key={idx} 
+                className="text-xs px-2 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300"
+              >
                 {feature}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
+          
+          <div className={cn(
+            "transition-all duration-500",
+            isHovered ? "max-h-60 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0 overflow-hidden"
+          )}>
+            <p className="text-xs text-amber-100/70 leading-relaxed">
+              {features[3]}
+            </p>
+          </div>
         </div>
       </div>
       
@@ -78,9 +89,15 @@ const ProfessionalServiceCard: React.FC<ProfessionalServiceCardProps> = ({
       
       {/* Bottom gradient line */}
       <div className={cn(
-        "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent",
+        "absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-amber-500/60 to-transparent",
         "transform transition-all duration-500",
         isHovered ? "opacity-100" : "opacity-30"
+      )}></div>
+      
+      {/* Edge glow effect */}
+      <div className={cn(
+        "absolute inset-0 border-2 border-amber-500/0 rounded-lg transition-all duration-500",
+        isHovered ? "border-amber-500/20 shadow-[0_0_15px_rgba(245,158,11,0.2)]" : ""
       )}></div>
     </div>
   );

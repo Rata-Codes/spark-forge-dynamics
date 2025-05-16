@@ -47,7 +47,7 @@ const WorkProcess: React.FC = () => {
                 className="animate-fade-in opacity-0" 
                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
-                <div className="flex flex-col items-center text-center bg-[#1A1812]/70 backdrop-blur-sm border border-amber-500/10 rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/5 hover:border-amber-500/20">
+                <div className="flex flex-col items-center text-center bg-[#1A1812]/70 backdrop-blur-sm border border-amber-500/20 rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 hover:border-amber-500/30">
                   <div className={`p-3 rounded-full bg-gradient-to-r ${step.color} mb-5 shadow-lg`}>
                     {step.icon}
                   </div>
