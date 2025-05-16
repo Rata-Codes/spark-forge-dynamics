@@ -83,6 +83,15 @@
   background-size: 50px 50px;
 }
 
+/* Glass effect classes */
+.glass-morphism {
+  @apply backdrop-blur-xl bg-amber-500/5 border border-amber-500/20 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-amber-900/10 border border-amber-500/10 shadow-lg;
+}
+
 /* Animations */
 @keyframes pulse-glow {
   0%, 100% {

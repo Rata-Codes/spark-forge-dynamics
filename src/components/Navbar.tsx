@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,7 +33,7 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex justify-between items-center">
-        <a href="/" className="z-10 flex items-center group">
+        <Link to="/" className="z-10 flex items-center group">
           <div className="relative h-12 w-12 overflow-hidden rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 p-2 shadow-lg transition-all duration-300 group-hover:shadow-amber-500/50">
             <Zap className="h-full w-full text-amber-50" />
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-amber-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -51,12 +52,13 @@ const Navbar: React.FC = () => {
             </div>
             <div className="text-xs font-medium text-amber-200/70 tracking-widest">INTELLIGENT SOLUTIONS</div>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#services" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">Services</a>
-          <a href="#about" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">About Us</a>
-          <a href="#process" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">Process</a>
+          <a href="/#services" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">Services</a>
+          <a href="/#about" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">About Us</a>
+          <a href="/#process" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">Process</a>
+          <Link to="/projects" className="font-medium text-amber-100/80 hover:text-amber-400 transition-colors">Projects</Link>
         </nav>
 
         <div className="hidden md:block">
@@ -75,26 +77,33 @@ const Navbar: React.FC = () => {
           <div className="fixed inset-0 bg-[#121212]/95 backdrop-blur-lg z-[5] flex flex-col items-center justify-center border-t border-amber-500/10">
             <nav className="flex flex-col items-center space-y-8">
               <a 
-                href="#services" 
+                href="/#services" 
                 className="text-xl font-medium text-amber-100 hover:text-amber-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
               </a>
               <a 
-                href="#about" 
+                href="/#about" 
                 className="text-xl font-medium text-amber-100 hover:text-amber-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About Us
               </a>
               <a 
-                href="#process" 
+                href="/#process" 
                 className="text-xl font-medium text-amber-100 hover:text-amber-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Process
               </a>
+              <Link
+                to="/projects" 
+                className="text-xl font-medium text-amber-100 hover:text-amber-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
               <Button 
                 className="bg-amber-600 hover:bg-amber-700 text-white mt-6"
                 onClick={() => setMobileMenuOpen(false)}

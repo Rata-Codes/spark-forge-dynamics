@@ -1,55 +1,55 @@
 
 import React from 'react';
-import { Laptop, Smartphone, Brain, BarChart } from 'lucide-react';
+import { Cpu, Code, Smartphone, Database } from 'lucide-react';
 import ProfessionalServiceCard from './ProfessionalServiceCard';
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      icon: <Laptop className="h-7 w-7 text-amber-400" />,
-      title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies for optimal performance and user experience.',
+      icon: <Code className="h-7 w-7 text-amber-400" />,
+      title: 'Custom Software Development',
+      description: 'Build high-performance, user-friendly software that scales with your business needs.',
       features: [
-        'Responsive UI/UX design',
-        'Progressive Web Apps (PWAs)',
-        'React & Next.js development',
-        'API integration'
+        'Enterprise solutions',
+        'Web applications',
+        'Cross-platform software',
+        'Legacy system modernization'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     },
     {
       icon: <Smartphone className="h-7 w-7 text-amber-400" />,
-      title: 'Mobile Applications',
-      description: 'Native and cross-platform mobile apps that provide seamless experiences across iOS and Android devices.',
+      title: 'Mobile App Development',
+      description: 'Create engaging mobile experiences for iOS and Android with cutting-edge technology.',
       features: [
-        'iOS & Android development',
-        'React Native & Flutter',
-        'Mobile UI/UX design',
-        'App store submission'
+        'Native app development',
+        'Cross-platform solutions',
+        'UI/UX design',
+        'App maintenance & support'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     },
     {
-      icon: <Brain className="h-7 w-7 text-amber-400" />,
+      icon: <Cpu className="h-7 w-7 text-amber-400" />,
       title: 'AI & Machine Learning',
-      description: 'Advanced AI solutions that analyze data, recognize patterns, and make intelligent decisions for your business.',
+      description: 'Harness the power of artificial intelligence to optimize operations and drive innovation.',
       features: [
-        'Computer vision systems',
-        'Natural language processing',
         'Predictive analytics',
-        'Custom AI models'
+        'Computer vision',
+        'Natural language processing',
+        'Recommendation systems'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     },
     {
-      icon: <BarChart className="h-7 w-7 text-amber-400" />,
-      title: 'Data Analytics',
-      description: 'Powerful data visualization and analytics tools that help you make informed business decisions.',
+      icon: <Database className="h-7 w-7 text-amber-400" />,
+      title: 'Data Analytics & BI',
+      description: 'Transform raw data into actionable insights with advanced analytics and visualization.',
       features: [
-        'Business intelligence dashboards',
-        'Real-time analytics',
-        'Data visualization',
-        'Performance reporting'
+        'Big data processing',
+        'Data warehousing',
+        'Business intelligence',
+        'Interactive dashboards'
       ],
       iconBg: "from-amber-500/20 to-amber-600/10"
     }
