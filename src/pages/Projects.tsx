@@ -31,7 +31,7 @@ const Projects = () => {
       try {
         const response = await fetch('https://api.airtable.com/v0/appkKccLAGrYOPAcu/tblQhXsg2wYMa1KPn', {
           headers: {
-            'Authorization': 'Bearer patIqckQGSpoHpRcG.dbe2df3b9eaed7c98ce21b6156f4ed95cbedf5946cd67ea3cced0ce516344ecf',
+            'Authorization': 'Bearer patcWr0ljbUna72fs.2cf84158eccfb42382d11a3d0cb2420fc1048410bafa6d2ddc1f82131828191c',
             'Content-Type': 'application/json'
           },
           method: 'GET'
