@@ -44,7 +44,7 @@ const AboutSection: React.FC = () => {
                 <div className="relative w-full h-full p-8">
                   <div className="absolute inset-0 bg-black/5 backdrop-blur-sm rounded-2xl"></div>
                   <div className="relative z-10 h-full flex flex-col justify-center">
-                    <div className="bg-white/90 dark:bg-spark-dark/90 p-8 rounded-xl shadow-lg max-w-md mx-auto">
+                    <div className="max-w-3xl mx-auto bg-[#1A1812]/50 backdrop-blur-md p-10 rounded-2xl border border-amber-500/20 glass-card">
                       <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                       <p className="text-muted-foreground">
                         To empower businesses with innovative technology solutions that drive growth, enhance efficiency, and create exceptional digital experiences.
