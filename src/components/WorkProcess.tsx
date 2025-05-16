@@ -8,25 +8,25 @@ const WorkProcess: React.FC = () => {
       icon: <Search className="h-8 w-8 text-white" />,
       title: 'Discovery',
       description: 'We start by understanding your business goals, challenges, and vision to define the project scope.',
-      color: 'from-spark-purple to-spark-light'
+      color: 'from-spark-purple to-spark-glow'
     },
     {
       icon: <Lightbulb className="h-8 w-8 text-white" />,
       title: 'Design',
       description: 'Our team creates innovative and intuitive designs focusing on user experience and your brand identity.',
-      color: 'from-spark-blue to-spark-light'
+      color: 'from-spark-ember to-spark-glow'
     },
     {
       icon: <Code className="h-8 w-8 text-white" />,
       title: 'Development',
       description: 'We build your solution using the latest technologies and best practices to ensure quality and performance.',
-      color: 'from-spark-purple to-spark-blue'
+      color: 'from-spark-purple to-spark-ember'
     },
     {
       icon: <Check className="h-8 w-8 text-white" />,
       title: 'Delivery',
       description: 'After thorough testing and your approval, we deploy your solution with ongoing support and maintenance.',
-      color: 'from-spark-blue to-spark-purple'
+      color: 'from-spark-ember to-spark-purple'
     }
   ];
 

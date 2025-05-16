@@ -64,12 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				spark: {
-					'purple': '#9b87f5',
+					'purple': '#FF8C42', /* Changed to a warm orange */
 					'dark': '#1A1F2C',
-					'light': '#D6BCFA',
-					'blue': '#1EAEDB',
+					'light': '#FFD6BA', /* Changed to light orange */
+					'blue': '#FF5733', /* Changed to deep orange */
 					'gray': '#F1F0FB',
 					'neutral': '#8E9196',
+					'ember': '#E25822', /* New warm ember color */
+					'glow': '#FFBD9D', /* New soft glow color */
+					'coal': '#161B22', /* Darker background */
 				}
 			},
 			borderRadius: {

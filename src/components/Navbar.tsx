@@ -27,29 +27,29 @@ const Navbar: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 dark:bg-spark-dark/90 shadow-md backdrop-blur-sm py-3' 
+          ? 'bg-spark-coal/90 shadow-md backdrop-blur-sm py-3' 
           : 'bg-transparent py-5'
       }`}
     >
       <div className="container flex justify-between items-center">
         <a href="/" className="z-10 flex items-center group">
-          <div className="relative h-12 w-12 overflow-hidden rounded-lg bg-gradient-to-br from-spark-purple to-spark-blue p-2 shadow-lg transition-all duration-300 group-hover:shadow-spark-purple/50">
+          <div className="relative h-12 w-12 overflow-hidden rounded-lg bg-gradient-to-br from-spark-purple to-spark-ember p-2 shadow-lg transition-all duration-300 group-hover:shadow-spark-purple/50">
             <Zap className="h-full w-full text-white animate-pulse" />
-            <div className="absolute inset-0 bg-gradient-to-r from-spark-purple/20 to-spark-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-spark-purple/20 to-spark-ember/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute -top-10 -left-10 w-16 h-16 bg-white/10 rounded-full blur-xl animate-spin-slow"></div>
             <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-white/10 rounded-full blur-xl animate-spin-slow animation-delay-700"></div>
           </div>
           <div className="ml-3 relative">
             <div className="font-bold text-xl relative">
-              <span className="bg-gradient-to-r from-spark-purple via-spark-blue to-spark-purple bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient">SPARKS AI</span>
+              <span className="bg-gradient-to-r from-spark-purple via-spark-ember to-spark-purple bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient">SPARKS AI</span>
               <div className="absolute -top-2 -right-4 w-4 h-4">
                 <div className="w-full h-full relative">
-                  <span className="absolute inset-0 block w-full h-full bg-spark-purple/80 rounded-full animate-ping"></span>
-                  <span className="absolute inset-0 block w-full h-full bg-spark-purple rounded-full animate-pulse"></span>
+                  <span className="absolute inset-0 block w-full h-full bg-spark-ember/80 rounded-full animate-ping"></span>
+                  <span className="absolute inset-0 block w-full h-full bg-spark-ember rounded-full animate-pulse"></span>
                 </div>
               </div>
             </div>
-            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 tracking-widest">INTELLIGENT SOLUTIONS</div>
+            <div className="text-xs font-medium text-gray-400 tracking-widest">INTELLIGENT SOLUTIONS</div>
           </div>
         </a>
 
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button className="bg-spark-purple hover:bg-spark-purple/90 text-white">Get in Touch</Button>
+          <Button className="bg-spark-purple hover:bg-spark-ember text-white transition-colors duration-300">Get in Touch</Button>
         </div>
 
         <button 
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 bg-white dark:bg-spark-dark z-[5] flex flex-col items-center justify-center">
+          <div className="fixed inset-0 bg-spark-coal z-[5] flex flex-col items-center justify-center">
             <nav className="flex flex-col items-center space-y-8">
               <a 
                 href="#services" 
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
                 Process
               </a>
               <Button 
-                className="bg-spark-purple hover:bg-spark-purple/90 text-white mt-6"
+                className="bg-spark-purple hover:bg-spark-ember text-white mt-6"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get in Touch

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import TechParticles from "@/components/TechParticles";
 import Navbar from "@/components/Navbar";
@@ -11,8 +11,13 @@ import FooterSection from "@/components/FooterSection";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
+  // Force dark mode
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-spark-coal text-foreground">
       {/* Particles background animation */}
       <ParticlesBackground />
       

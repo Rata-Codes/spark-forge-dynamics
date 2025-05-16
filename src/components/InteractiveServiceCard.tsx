@@ -17,7 +17,7 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
   title, 
   description, 
   features,
-  iconBg = "from-spark-purple/20 to-spark-blue/20",
+  iconBg = "from-spark-purple/20 to-spark-ember/20",
   index 
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -30,8 +30,8 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
     <div 
       className={cn(
         "relative rounded-xl transition-all duration-500 ease-in-out overflow-hidden",
-        "bg-white dark:bg-spark-dark/80 shadow-sm hover:shadow-lg",
-        "border border-transparent hover:border-spark-purple/20",
+        "bg-card/80 shadow-sm hover:shadow-lg",
+        "border border-transparent hover:border-spark-purple/30",
         isExpanded ? "h-[340px]" : "h-[220px]",
         "animate-fade-in opacity-0"
       )}
@@ -70,7 +70,7 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
           <ul className="text-sm text-muted-foreground space-y-1">
             {features.map((feature, idx) => (
               <li key={idx} className="flex items-center">
-                <span className="mr-2 text-spark-purple">•</span>
+                <span className="mr-2 text-spark-ember">•</span>
                 {feature}
               </li>
             ))}

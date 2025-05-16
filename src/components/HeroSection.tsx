@@ -16,8 +16,8 @@ const HeroSection: React.FC = () => {
                   <path d="M 0 10 Q 50 0 100 10 Q 150 20 200 10 Q 250 0 300 10 Q 350 20 400 10" stroke="url(#sparkline)" strokeWidth="2" fill="none" />
                   <defs>
                     <linearGradient id="sparkline" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#9b87f5" />
-                      <stop offset="100%" stopColor="#1EAEDB" />
+                      <stop offset="0%" stopColor="#FF8C42" />
+                      <stop offset="100%" stopColor="#E25822" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in [animation-delay:0.6s] opacity-0">
             <Button size="lg" className="group bg-spark-purple hover:bg-spark-purple/90 text-white px-8 py-6 text-lg relative overflow-hidden">
               <span className="relative z-10">Get Started</span>
-              <span className="absolute inset-0 w-0 bg-gradient-to-r from-spark-purple to-spark-blue group-hover:w-full transition-all duration-500"></span>
+              <span className="absolute inset-0 w-0 bg-gradient-to-r from-spark-purple to-spark-ember group-hover:w-full transition-all duration-500"></span>
             </Button>
             <Button variant="outline" size="lg" className="group border-spark-purple text-foreground hover:bg-spark-purple/10 px-8 py-6 text-lg">
               Our Services
@@ -53,8 +53,8 @@ const HeroSection: React.FC = () => {
               <span className="mt-2 text-sm font-medium">Web Dev</span>
             </div>
             <div className="flex flex-col items-center animate-float [animation-delay:0.3s] group perspective-500">
-              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-blue/20">
-                <Smartphone className="h-8 w-8 text-spark-blue transform transition-all duration-300 group-hover:scale-110" />
+              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-ember/20">
+                <Smartphone className="h-8 w-8 text-spark-ember transform transition-all duration-300 group-hover:scale-110" />
               </div>
               <span className="mt-2 text-sm font-medium">Mobile Apps</span>
             </div>
@@ -65,8 +65,8 @@ const HeroSection: React.FC = () => {
               <span className="mt-2 text-sm font-medium">AI Solutions</span>
             </div>
             <div className="flex flex-col items-center animate-float [animation-delay:0.9s] group perspective-500">
-              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-blue/20">
-                <Laptop className="h-8 w-8 text-spark-blue transform transition-all duration-300 group-hover:scale-110" />
+              <div className="p-4 bg-gradient-to-br from-card/80 to-card/40 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 group-hover:rotate-y-12 group-hover:shadow-spark-ember/20">
+                <Laptop className="h-8 w-8 text-spark-ember transform transition-all duration-300 group-hover:scale-110" />
               </div>
               <span className="mt-2 text-sm font-medium">UI/UX</span>
             </div>
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Background elements */}
-      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl bg-gradient-to-br from-spark-purple/20 to-spark-blue/20 animate-pulse-slow"></div>
+      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl bg-gradient-to-br from-spark-purple/20 to-spark-ember/20 animate-pulse-slow"></div>
       
       {/* Circuit animation background */}
       <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
@@ -121,34 +121,34 @@ const HeroSection: React.FC = () => {
           />
           <defs>
             <linearGradient id="circuit1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#9b87f5" />
-              <stop offset="100%" stopColor="#1EAEDB" />
+              <stop offset="0%" stopColor="#FF8C42" />
+              <stop offset="100%" stopColor="#E25822" />
             </linearGradient>
             <linearGradient id="circuit2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1EAEDB" />
-              <stop offset="100%" stopColor="#9b87f5" />
+              <stop offset="0%" stopColor="#E25822" />
+              <stop offset="100%" stopColor="#FF8C42" />
             </linearGradient>
             <linearGradient id="circuit3" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#9b87f5" />
-              <stop offset="100%" stopColor="#1EAEDB" />
+              <stop offset="0%" stopColor="#FF8C42" />
+              <stop offset="100%" stopColor="#E25822" />
             </linearGradient>
             <linearGradient id="circuit4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1EAEDB" />
-              <stop offset="100%" stopColor="#9b87f5" />
+              <stop offset="0%" stopColor="#E25822" />
+              <stop offset="100%" stopColor="#FF8C42" />
             </linearGradient>
             <linearGradient id="circuit5" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#9b87f5" />
-              <stop offset="50%" stopColor="#1EAEDB" />
-              <stop offset="100%" stopColor="#9b87f5" />
+              <stop offset="0%" stopColor="#FF8C42" />
+              <stop offset="50%" stopColor="#E25822" />
+              <stop offset="100%" stopColor="#FF8C42" />
             </linearGradient>
           </defs>
         </svg>
         
         {/* Circuit nodes */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-spark-purple/80 shadow-lg shadow-spark-purple/30 circuit-node"></div>
-        <div className="absolute top-3/4 right-1/4 w-2 h-2 rounded-full bg-spark-blue/80 shadow-lg shadow-spark-blue/30 circuit-node" style={{ animationDelay: '0.3s' }}></div>
+        <div className="absolute top-3/4 right-1/4 w-2 h-2 rounded-full bg-spark-ember/80 shadow-lg shadow-spark-ember/30 circuit-node" style={{ animationDelay: '0.3s' }}></div>
         <div className="absolute top-2/4 left-3/4 w-2 h-2 rounded-full bg-spark-purple/80 shadow-lg shadow-spark-purple/30 circuit-node" style={{ animationDelay: '0.6s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-spark-blue/80 shadow-lg shadow-spark-blue/30 circuit-node" style={{ animationDelay: '0.9s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-spark-glow/80 shadow-lg shadow-spark-ember/30 circuit-node" style={{ animationDelay: '0.9s' }}></div>
       </div>
       
       {/* Code-like decoration */}

@@ -15,10 +15,10 @@ const ServicesSection: React.FC = () => {
         'React & Next.js development',
         'API integration'
       ],
-      iconBg: "from-spark-purple/20 to-spark-blue/20"
+      iconBg: "from-spark-purple/20 to-spark-ember/20"
     },
     {
-      icon: <Smartphone className="h-7 w-7 text-spark-blue" />,
+      icon: <Smartphone className="h-7 w-7 text-spark-ember" />,
       title: 'Mobile Applications',
       description: 'Native and cross-platform mobile apps that provide seamless experiences across iOS and Android devices.',
       features: [
@@ -27,7 +27,7 @@ const ServicesSection: React.FC = () => {
         'Mobile UI/UX design',
         'App store submission'
       ],
-      iconBg: "from-spark-blue/20 to-spark-purple/20"
+      iconBg: "from-spark-ember/20 to-spark-purple/20"
     },
     {
       icon: <Brain className="h-7 w-7 text-spark-purple" />,
@@ -39,10 +39,10 @@ const ServicesSection: React.FC = () => {
         'Predictive analytics',
         'Custom AI models'
       ],
-      iconBg: "from-spark-purple/20 to-spark-blue/20"
+      iconBg: "from-spark-purple/20 to-spark-ember/20"
     },
     {
-      icon: <BarChart className="h-7 w-7 text-spark-blue" />,
+      icon: <BarChart className="h-7 w-7 text-spark-ember" />,
       title: 'Data Analytics',
       description: 'Powerful data visualization and analytics tools that help you make informed business decisions.',
       features: [
@@ -51,12 +51,12 @@ const ServicesSection: React.FC = () => {
         'Data visualization',
         'Performance reporting'
       ],
-      iconBg: "from-spark-blue/20 to-spark-purple/20"
+      iconBg: "from-spark-ember/20 to-spark-purple/20"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-secondary/50 relative overflow-hidden">
+    <section id="services" className="py-20 bg-secondary/10 relative overflow-hidden">
       {/* Tech-themed background elements */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800">
@@ -96,7 +96,7 @@ const ServicesSection: React.FC = () => {
       
       {/* Floating tech elements */}
       <div className="absolute -bottom-16 -left-16 w-32 h-32 border border-spark-purple/10 rounded-full"></div>
-      <div className="absolute top-10 right-10 w-20 h-20 border border-spark-blue/10 rounded-full"></div>
+      <div className="absolute top-10 right-10 w-20 h-20 border border-spark-ember/10 rounded-full"></div>
       <div className="absolute top-1/3 left-10 w-16 h-16 border border-spark-purple/10 rounded-full"></div>
     </section>
   );
