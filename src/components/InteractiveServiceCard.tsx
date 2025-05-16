@@ -17,7 +17,7 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
   title, 
   description, 
   features,
-  iconBg = "from-spark-purple/20 to-spark-ember/20",
+  iconBg = "from-amber-500/20 to-amber-600/10",
   index 
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -31,7 +31,7 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
       className={cn(
         "relative rounded-xl transition-all duration-500 ease-in-out overflow-hidden",
         "bg-card/80 shadow-sm hover:shadow-lg",
-        "border border-transparent hover:border-spark-purple/30",
+        "border border-transparent hover:border-amber-500/30",
         isExpanded ? "h-[340px]" : "h-[220px]",
         "animate-fade-in opacity-0"
       )}
@@ -66,11 +66,11 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
           "mt-4 opacity-0 transition-all duration-300",
           isExpanded ? "opacity-100 translate-y-0" : "translate-y-8"
         )}>
-          <h4 className="font-semibold text-sm text-spark-purple mb-2">Key Features:</h4>
+          <h4 className="font-semibold text-sm text-amber-500 mb-2">Key Features:</h4>
           <ul className="text-sm text-muted-foreground space-y-1">
             {features.map((feature, idx) => (
               <li key={idx} className="flex items-center">
-                <span className="mr-2 text-spark-ember">•</span>
+                <span className="mr-2 text-amber-600">•</span>
                 {feature}
               </li>
             ))}
@@ -78,28 +78,49 @@ const InteractiveServiceCard: React.FC<InteractiveServiceCardProps> = ({
         </div>
       </div>
       
-      {/* Animated background elements */}
-      <div className={cn(
-        "absolute bottom-0 right-0 w-32 h-32 opacity-5 rounded-full",
-        "transition-all duration-500",
-        isExpanded ? "scale-150" : "scale-100"
-      )}>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="1" fill="none"/>
-          <circle cx="50" cy="50" r="20" stroke="currentColor" strokeWidth="1" fill="none"/>
-          <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="1"/>
-          <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" strokeWidth="1"/>
-        </svg>
-      </div>
-      
-      {/* Hover effect circuit lines */}
+      {/* Tech-themed background elements */}
       <div className={cn(
         "absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300",
         isExpanded ? "opacity-10" : "group-hover:opacity-5"
       )}>
+        {/* Circuit board pattern */}
         <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,20 Q25,20 25,50 T50,80 T75,50 T100,20" fill="none" stroke="currentColor" strokeWidth="1"/>
-          <path d="M0,80 Q25,80 25,50 T50,20 T75,50 T100,80" fill="none" stroke="currentColor" strokeWidth="1"/>
+          <g stroke="currentColor" strokeWidth="0.5" fill="none">
+            <rect x="10" y="10" width="10" height="10" />
+            <rect x="40" y="10" width="20" height="20" />
+            <rect x="70" y="20" width="15" height="15" />
+            <rect x="20" y="40" width="30" height="10" />
+            <rect x="60" y="50" width="20" height="20" />
+            <rect x="10" y="70" width="10" height="20" />
+            
+            <line x1="20" y1="15" x2="40" y2="15" />
+            <line x1="60" y1="20" x2="70" y2="20" />
+            <line x1="30" y1="40" x2="30" y2="20" />
+            <line x1="70" y1="35" x2="70" y2="50" />
+            <line x1="50" y1="50" x2="60" y2="60" />
+            <line x1="20" y1="70" x2="40" y2="70" />
+            <line x1="80" y1="50" x2="90" y2="50" />
+          </g>
+        </svg>
+      </div>
+      
+      {/* Accent shimmer */}
+      <div className={cn(
+        "absolute bottom-0 left-0 right-0 h-1 gold-shimmer",
+        isExpanded ? "opacity-100" : "opacity-0"
+      )}></div>
+      
+      {/* Tech corner element */}
+      <div className={cn(
+        "absolute top-0 right-0 w-24 h-24 opacity-20",
+        "transition-all duration-500",
+        isExpanded ? "scale-110" : "scale-100"
+      )}>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="80" cy="20" r="15" stroke="currentColor" strokeWidth="1" fill="none"/>
+          <circle cx="80" cy="20" r="8" stroke="currentColor" strokeWidth="1" fill="none"/>
+          <line x1="65" y1="20" x2="50" y2="20" stroke="currentColor" strokeWidth="1"/>
+          <line x1="80" y1="35" x2="80" y2="50" stroke="currentColor" strokeWidth="1"/>
         </svg>
       </div>
     </div>

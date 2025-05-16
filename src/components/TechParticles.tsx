@@ -30,8 +30,18 @@ const TechParticles: React.FC = () => {
         this.size = Math.random() * 3 + 1;
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
-        this.color = `rgba(30, 120, 255, ${Math.random() * 0.5 + 0.2})`;
-        this.type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)];
+        
+        // Gold theme colors
+        const goldHues = [
+          'rgba(245, 158, 11, 0.4)', // Amber
+          'rgba(217, 119, 6, 0.4)',  // Darker amber
+          'rgba(251, 191, 36, 0.4)', // Yellow
+          'rgba(202, 138, 4, 0.4)',  // Gold
+          'rgba(180, 83, 9, 0.4)'    // Dark gold
+        ];
+        
+        this.color = goldHues[Math.floor(Math.random() * goldHues.length)];
+        this.type = ['circuit', 'device', 'code'][Math.floor(Math.random() * 3)];
       }
       
       update() {
@@ -47,34 +57,73 @@ const TechParticles: React.FC = () => {
       
       draw() {
         ctx.fillStyle = this.color;
-        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 1;
         
         switch(this.type) {
-          case 'square':
-            ctx.rect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+          case 'circuit':
+            // Circuit board pattern
+            ctx.beginPath();
+            ctx.rect(this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y - this.size);
+            ctx.lineTo(this.x, this.y + this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y);
+            ctx.lineTo(this.x + this.size, this.y);
+            ctx.stroke();
             break;
-          case 'triangle':
-            ctx.moveTo(this.x, this.y - this.size/2);
-            ctx.lineTo(this.x + this.size/2, this.y + this.size/2);
-            ctx.lineTo(this.x - this.size/2, this.y + this.size/2);
+          case 'device':
+            // Laptop/device shape
+            ctx.beginPath();
+            ctx.rect(this.x - this.size, this.y - this.size/2, this.size * 2, this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y + this.size/2);
+            ctx.lineTo(this.x + this.size, this.y + this.size/2);
+            ctx.lineTo(this.x + this.size * 1.5, this.y + this.size);
+            ctx.lineTo(this.x - this.size * 1.5, this.y + this.size);
             ctx.closePath();
+            ctx.stroke();
+            break;
+          case 'code':
+            // Code brackets
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y - this.size);
+            ctx.lineTo(this.x, this.y - this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y - this.size);
+            ctx.lineTo(this.x - this.size, this.y + this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y + this.size);
+            ctx.lineTo(this.x, this.y + this.size);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size, this.y - this.size);
+            ctx.lineTo(this.x + this.size * 2, this.y - this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * 2, this.y - this.size);
+            ctx.lineTo(this.x + this.size * 2, this.y + this.size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * 2, this.y + this.size);
+            ctx.lineTo(this.x + this.size, this.y + this.size);
+            ctx.stroke();
             break;
           default:
+            ctx.beginPath();
             ctx.arc(this.x, this.y, this.size/2, 0, Math.PI * 2);
+            ctx.fill();
         }
-        
-        ctx.fill();
       }
     }
 
-    // Create lines between particles
-    const particles: Particle[] = [];
-    const particleCount = Math.min(100, Math.floor(canvas.width * canvas.height / 20000));
-    
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-    
     // Create grid nodes
     class GridNode {
       x: number;
@@ -82,6 +131,7 @@ const TechParticles: React.FC = () => {
       size: number;
       alpha: number;
       pulseDirection: number;
+      type: string;
       
       constructor(x: number, y: number) {
         this.x = x;
@@ -89,6 +139,7 @@ const TechParticles: React.FC = () => {
         this.size = 1;
         this.alpha = Math.random() * 0.3 + 0.1;
         this.pulseDirection = Math.random() > 0.5 ? 1 : -1;
+        this.type = Math.random() > 0.8 ? 'tech' : 'dot';
       }
       
       update() {
@@ -102,10 +153,42 @@ const TechParticles: React.FC = () => {
       }
       
       draw() {
-        ctx.fillStyle = `rgba(30, 120, 255, ${this.alpha})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+        
+        if (this.type === 'tech') {
+          // Draw tech element (cpu, chip)
+          ctx.strokeStyle = `rgba(245, 158, 11, ${this.alpha})`;
+          ctx.lineWidth = 1;
+          
+          ctx.beginPath();
+          ctx.rect(this.x - 3, this.y - 3, 6, 6);
+          ctx.stroke();
+          
+          // Connection lines
+          ctx.beginPath();
+          ctx.moveTo(this.x - 3, this.y);
+          ctx.lineTo(this.x - 8, this.y);
+          ctx.stroke();
+          
+          ctx.beginPath();
+          ctx.moveTo(this.x + 3, this.y);
+          ctx.lineTo(this.x + 8, this.y);
+          ctx.stroke();
+          
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y - 3);
+          ctx.lineTo(this.x, this.y - 8);
+          ctx.stroke();
+          
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y + 3);
+          ctx.lineTo(this.x, this.y + 8);
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
     }
     
@@ -114,15 +197,25 @@ const TechParticles: React.FC = () => {
     
     for (let x = 0; x < canvas.width; x += gridSize) {
       for (let y = 0; y < canvas.height; y += gridSize) {
-        gridNodes.push(new GridNode(x, y));
+        if (Math.random() > 0.7) { // Only create nodes at some grid intersections
+          gridNodes.push(new GridNode(x, y));
+        }
       }
+    }
+    
+    // Create lines between particles
+    const particles: Particle[] = [];
+    const particleCount = Math.min(80, Math.floor(canvas.width * canvas.height / 25000));
+    
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
     }
     
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw grid
-      ctx.strokeStyle = 'rgba(30, 120, 255, 0.05)';
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.05)';
       ctx.lineWidth = 0.5;
       
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -156,8 +249,8 @@ const TechParticles: React.FC = () => {
           const dy = particles[j].y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
-            ctx.strokeStyle = `rgba(30, 120, 255, ${0.1 * (1 - distance / 100)})`;
+          if (distance < 120) {
+            ctx.strokeStyle = `rgba(245, 158, 11, ${0.1 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);

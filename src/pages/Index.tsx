@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#040714] text-foreground">
+    <div className="relative min-h-screen bg-[#121212] text-foreground">
       {/* Tech-themed particles */}
       <TechParticles />
       
